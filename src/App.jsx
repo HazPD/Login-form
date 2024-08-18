@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import SignUp from './components/signup';
-import Login from './components/login'; // Import the correct Login component
+import Login from './components/login'; 
 import Reset from './components/reset';
 import TwoFactor from './components/TwoFA';
 import NewPassword from './components/newpassword';
