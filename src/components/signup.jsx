@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import FormButtons from "./buttons";
 import './forms.css'
 
-function SignUp({viewForm,setviewForm}) {
-
+function SignUp({ viewForm, setviewForm }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -23,7 +22,6 @@ function SignUp({viewForm,setviewForm}) {
             errors.email = "Invalid email address";
         }
 
-        
         if (!password) {
             errors.password = "Password is required";
         } else if (password.length < 8) {
@@ -36,48 +34,51 @@ function SignUp({viewForm,setviewForm}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (validate()) {
-            console.log("Form submitted successfully");
+        const isValid = validate();
+        if (isValid) {
+            alert("Account created!");
+        } else {
+            setErrors(errors);
         }
     };
 
     return (
         <div className="form">
-            <form className="signup" onSubmit={handleSubmit}>
-                <h1>SignUp</h1>
+            <form className="signup">
+                <h1>Sign Up</h1>
                 <div className="input-icons">
                     <i className="fa-regular fa-circle-user"></i>
                     <input 
-                        type = 'text'
-                        placeholder = 'Enter name...'
-                        className = 'input-field'
+                        type='text'
+                        placeholder='Enter name...'
+                        className='input-field'
                         value={name}
-                        onChange={(e) => setName(e.target.value)}>
-                    </input>
+                        onChange={(e) => setName(e.target.value)}
+                    />
                     {errors.name && <p className="error">{errors.name}</p>}
                 </div>
 
                 <div className="input-icons">
                     <i className="fa-regular fa-envelope"></i>
                     <input 
-                        type = 'email'
-                        placeholder = 'Enter Email...'
-                        className = 'input-field'
+                        type='email'
+                        placeholder='Enter Email...'
+                        className='input-field'
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}>
-                    </input> 
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                     {errors.email && <p className="error">{errors.email}</p>}
                 </div>
 
                 <div className="input-icons">
                     <i className="fa-solid fa-key"></i>
                     <input 
-                        type = 'password'
-                        placeholder = 'Enter password...'
-                        className = 'input-field'
+                        type='password'
+                        placeholder='Enter password...'
+                        className='input-field'
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}>
-                    </input> 
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                     {errors.password && <p className="error">{errors.password}</p>}
                 </div>
 
@@ -85,9 +86,8 @@ function SignUp({viewForm,setviewForm}) {
                     <FormButtons viewForm={viewForm} setviewForm={setviewForm} />  
                 </div>
             </form>
-
         </div>
-    )
+    );
 }
 
 export default SignUp;
