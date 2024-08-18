@@ -2,19 +2,11 @@ import React from "react";
 import FormButtons from "./buttons";
 import './forms.css'
 
-function SignUp({viewForm,setviewForm}) {
+function Login({viewForm,setviewForm}) {
     return (
         <div className="form">
             <form className="login">
-                <h1>SignUp</h1>
-                <div className="input-icons">
-                    <i className="fa-regular fa-circle-user"></i>
-                    <input 
-                        type = 'text'
-                        placeholder = 'Enter name...'
-                        className = 'input-field'>
-                    </input>
-                </div>
+                <h1>Login</h1>
 
                 <div className="input-icons">
                     <i className="fa-regular fa-envelope"></i>
@@ -34,6 +26,14 @@ function SignUp({viewForm,setviewForm}) {
                     </input> 
                 </div>
 
+                <div className="reset-container">
+                    <p>Forgot password?</p>
+                    <button id="reset-button"
+                            onClick={() => setviewForm('reset')}
+                            >Click here
+                    </button>
+                </div>
+
                 <div className="button-container">
                     <FormButtons viewForm={viewForm} setviewForm={setviewForm} />  
                 </div>
@@ -43,4 +43,4 @@ function SignUp({viewForm,setviewForm}) {
     )
 }
 
-export default SignUp;
+export default Login;
