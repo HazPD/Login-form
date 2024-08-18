@@ -1,0 +1,79 @@
+
+form {
+    display:flex;
+    flex-direction: column;
+    gap:1em;
+    padding:5em;
+}
+
+.form {
+    width:25em;
+    height:25em;
+}
+
+form.signup {
+    gap:1em;
+}
+
+form.Reset{
+    justify-content: center;
+    padding-bottom:5em;
+    height:100%;
+    gap:3em;
+}
+
+form.new-password {
+    gap:1em;
+}
+
+form.new-password button {
+    align-self:center;
+}
+h1,h2 {
+    text-align:center;
+}
+
+
+input {
+    width:100%;
+    height:2.5em;
+    padding-left:2em;
+    background: rgb(224, 222, 222);
+    border:none;
+}
+
+p {
+    font-size:12px;
+}
+
+i {
+    position:absolute;
+    padding-left:0.4em;
+    padding-top:0.5em;
+}
+
+
+
+.form-buttons {
+    display:flex;
+    gap:3em;
+    justify-content: center;
+}
+
+button {
+    width:6em;
+    height:3em;
+    border-radius: 6px;
+}
+
+#reset-button {
+    height:1em;
+    font-size:12px;
+    border:none;
+    background:rgba(255, 255, 255, 0);
+}
+
+.reset-container {
+    display:flex;
+
+}
